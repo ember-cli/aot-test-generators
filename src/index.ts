@@ -1,10 +1,6 @@
 const escape = require('js-string-escape');
 
-export interface TestGenerator {
-  suiteHeader(suiteName: string): string
-  suiteFooter(): string
-  test(testName: string, passed: boolean, assertionMessage: string): string
-}
+import TestGenerator from './test-generator';
 
 class QUnitTestGenerator implements TestGenerator {
   suiteHeader(suiteName: string) {
