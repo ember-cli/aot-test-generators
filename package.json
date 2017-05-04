@@ -1,0 +1,19 @@
+{
+  "name": "aot-test-generators",
+  "version": "0.1.0",
+  "description": "Generate test suites for checks that already happened at build-time",
+  "homepage": "https://github.com/ember-cli/aot-test-generators#readme",
+  "bugs": {
+    "url": "https://github.com/ember-cli/aot-test-generators/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ember-cli/aot-test-generators.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
