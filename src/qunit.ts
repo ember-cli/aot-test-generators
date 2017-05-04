@@ -1,6 +1,5 @@
-const escape = require('js-string-escape');
-
 import TestGenerator from './test-generator';
+import escape from './utils/escape';
 
 export default class QUnitTestGenerator implements TestGenerator {
   suiteHeader(suiteName: string) {
