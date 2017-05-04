@@ -24,6 +24,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
+    "@types/node": "^7.0.16",
     "typescript": "^2.3.2"
   }
 }
