@@ -10,10 +10,10 @@ export default class MochaTestGenerator implements TestGenerator {
     return '});\n';
   }
 
-  test(testName: string, passed: boolean, assertionMessage: string) {
+  test(testName: string, passed: boolean, assertionMessage?: string) {
     return (
       `  it(${escape(testName)}, function() {\n` +
-      this.assertion(passed, assertionMessage) +
+      this.assertion(passed, assertionMessage || testName) +
       `  });\n`
     );
   }

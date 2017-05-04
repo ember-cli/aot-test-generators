@@ -47,6 +47,11 @@ describe('MochaTestGenerator', function() {
       ].join('\n'));
     });
 
+    it('uses test name as assertion message if not specified otherwise', function() {
+      expect(generator.test('test-name', false))
+        .to.contain(`AssertionError('test-name');`);
+    });
+
     it('escapes the test name', function() {
       expect(generator.test(`foo'bar`, false, 'assertion-message'))
         .to.contain(`'foo\\'bar'`);
