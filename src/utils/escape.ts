@@ -1,5 +1,5 @@
-const escape = require('js-string-escape');
+const jsesc = require('jsesc');
 
 export default function(str: string): string {
-  return `'${escape(str)}'`;
+  return jsesc(str, { wrap: true });
 };
