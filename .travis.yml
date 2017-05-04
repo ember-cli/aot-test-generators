@@ -3,3 +3,16 @@ node_js:
 - 'stable'
 - '6'
 - '4'
+
+before_deploy:
+  - npm install -g auto-dist-tag
+  - auto-dist-tag --write
+
+deploy:
+  provider: npm
+  email: stefan.penner+ember-cli@gmail.com
+  api_key:
+    secure: ODdvCTw+C1STSUz0rIjMIbkMQWUf8EEh3TMWQfijQm/+Yp/jowG8FosCFIOWWwSfqx9turKYN80XX4DSEPxuijqTwtLv1y4batqcRJu4/uPNuO5NdWh6EzoKuUwrGdTTQ4HHzLis9L1GfMi2CUcVrteblt9qgHYnzdOXYREKqgvd31uF4iM5NeSUKDhhp5gcY0hsyQYQMTKqrsL9gAkYyIOdtF44I/EhpL1DfUCjDau1aM3iJPRoLCi5GX5CJd5Qutv+NjPwVEoigmZETbISQCH3B3XprGZA1n9BmWXEPKtbFeavG+1O60aifxONC8k6i2I7+5NbYmvKI4D6C1x6ESnaj1SNYQCePysf3vj0YbRhC9TSTnyRQaLIIti+vnWWmIik6A3wBd4RAksoh2KXgdP5uUtKREYu39fEhB497EimSBk6BTJ3cFAKjfsQMoS0bcay+aljVbH1KaDVpZDliNK8IoToQqBfYhlocL7I7/qtpjlTW2RKIdawKS2wIStScRMKl6S1z33gzpdREHXZLHD3H+1+NT/tnSbuxfdpjLW8bMjiAiKPytUBlxuDqNQDwfLvzXz8YTX4VkLPDj4AtywxeDnz9cSCmdqouH6KKUPaiiaxcy5uA0fel4kEl/z68wEJriM+GuX4cR3OPF8+mYQRsoDglle7MOa8yML+3II=
+  on:
+    tags: true
+    repo: ember-cli/aot-test-generators
