@@ -8,12 +8,22 @@
   },
   "license": "Apache-2.0",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
-  "main": "index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ember-cli/aot-test-generators.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^2.3.2"
   }
 }
