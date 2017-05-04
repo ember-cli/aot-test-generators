@@ -3,7 +3,7 @@ import escape from './utils/escape';
 
 export default class MochaTestGenerator implements TestGenerator {
   suiteHeader(suiteName: string) {
-    return `describe('${escape(suiteName)}', function() {\n`;
+    return `describe(${escape(suiteName)}, function() {\n`;
   }
 
   suiteFooter() {
@@ -12,7 +12,7 @@ export default class MochaTestGenerator implements TestGenerator {
 
   test(testName: string, passed: boolean, assertionMessage: string) {
     return (
-      `  it('${escape(testName)}', function() {\n` +
+      `  it(${escape(testName)}, function() {\n` +
       this.assertion(passed, assertionMessage) +
       `  });\n`
     );
@@ -25,7 +25,7 @@ export default class MochaTestGenerator implements TestGenerator {
 
     return (
       `    // test failed\n`+
-      `    var error = new chai.AssertionError('${escape(assertionMessage)}');\n` +
+      `    var error = new chai.AssertionError(${escape(assertionMessage)});\n` +
       `    error.stack = undefined;\n` +
       `    throw error;\n`
     );
